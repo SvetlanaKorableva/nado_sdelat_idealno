@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Позволяет заполнить весь экран без искажений */
+    transform: translate(-50%, -50%);
+    object-position: center;
+    z-index: -1; /* Убедитесь, что видео под текстом */
+}
+
+.overlay {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 50px;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 105px;
+    color: #000000; /* Цвет текста */
+    text-align: center;
+    position: relative;
+}
+
+h1::after {
+    content: "*"; /* Текст, который будет добавлен */
+    font-size: 105px; /* Размер звездочки */
+    color: #000000; /* Цвет звездочки (можно изменить) */
+}
+
+/* Скрываем вуаль по умолчанию */
+body::before {
+    content: ""; 
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Слой начинается сверху */
+    left: 0; /* Слой начинается слева */
+    width: 100%; 
+    height: 100%; 
+    background: rgba(255, 255, 255, 0.3); 
+    z-index: 2; /* Размещаем вуаль над контентом */
+    opacity: 0; /* Скрываем вуаль по умолчанию */
+}
+
+/* Показываем вуаль при наведении на body */
+body:hover::before {
+    opacity: 1; /* Показываем вуаль */
+}
+
+.overlay {
+    position: relative;
+    z-index: 1; /* Контент находится под вуалью */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 50px;
+}
