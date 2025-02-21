@@ -51,6 +51,10 @@ h1::after {
     color: #000000;
 }
 
+h1:hover:after {
+    color: #4C4C4C;  
+}
+
 /* Вуаль */
 body::before {
     content: "";
@@ -63,6 +67,12 @@ body::before {
     z-index: 2; /* Вуаль между контентом и тултипом */
     opacity: 0;
     transition: opacity 0.3s ease; /* Плавное появление */
+}
+
+
+/* Меняем цвет текста при наведении на .overlay */
+.overlay:hover .page__heading {
+    color: #4C4C4C; /* Изменяем цвет текста */ 
 }
 
 body:hover::before {
@@ -84,7 +94,7 @@ body:hover::before {
     border: 2px solid #000000;
     border-radius: 20px;
     width: 660px;
-    padding: 36px 44px;
+    padding: 24px 44px;
     font-family: 'Raleway';
     font-weight: 400 ; /* Обычный шрифт */
     font-size: 35px;
@@ -94,10 +104,14 @@ body:hover::before {
     z-index: 10; /* Тултип самый верхний */
     opacity: 0;
     pointer-events: none;
+    box-shadow: 0 12px 0 0 #000000;
+    top: 50%; /* Размещаем тултип вертикально посередине заголовка */
+    left: 50%; /* Центрируем горизонтально */
+    transform: translate(4%, -55%); /* Точный центр */
     transition: opacity 0.3s ease; /* Плавное появление */
 }
 
 /* Показываем тултип при наведении */
 .page__heading:hover::before {
-    opacity: 1;
+    opacity: 1; 
 }
