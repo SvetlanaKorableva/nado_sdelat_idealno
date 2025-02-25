@@ -1,4 +1,4 @@
-/* Общие стили */
+/* Общие */
 * {
     margin: 0;
     padding: 0;
@@ -69,7 +69,6 @@ body::before {
     transition: opacity 0.3s ease; /* Плавное появление */
 }
 
-/* Меняем цвет текста при наведении на .overlay */
 .overlay:hover .page__heading {
     color: #4C4C4C; /* Изменяем цвет текста */
 }
@@ -115,3 +114,18 @@ body:hover::before {
     opacity: 1;
 }
 
+@media (min-width: 1600px) {
+    h1 {
+        font-size: 120px; 
+    }
+
+    h1::after {
+        font-size: 120px; 
+    }
+
+    .page__heading::before {
+        width: 760px; /* Увеличиваем ширину тултипа */
+        font-size: 40px; /* Увеличиваем размер шрифта внутри тултипа */
+        padding: 30px 50px; /* Увеличиваем отступы внутри тултипа */
+    }
+}
